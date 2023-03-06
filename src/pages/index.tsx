@@ -1,16 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import {PageTemplate, getStaticPropsTemplate} from '../components/PageTemplate'
 
-const inter = Inter({ subsets: ['latin'] })
+import storiesType from '../utils/storiesType'
 
-export default function Home() {
-  return (
-    <>
-      {/* <main className={styles.main}>    
+const stories = storiesType('top')
 
-      </main> */}
-    </>
-  )
+export default function LandingPage() {
+    return <PageTemplate stories={stories}/>
 }
+
+export const getStaticProps = getStaticPropsTemplate(stories)
